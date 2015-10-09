@@ -1,0 +1,26 @@
+import os
+
+a="homework1"
+
+C=[["TO,HAN-YU","Lawrence","LawrenceTo"],
+ ["ZeNanChen","Nothing","chenzananKK"],
+ ["Jin","gordon","gordon471"],
+ ["haoyu","max","maxhaoyu"],
+ ["Michael V. Koldayev","Michael","Michaelv2605"],
+ ["Janghyeok choi","JC", "jc471"],
+ ["Tsoi,chiu yuen","Edward", "Edward-Tsoi"],
+ ["Young","none","younpseth"],
+ ["Taeyoung Lee","Jack","Wantcode"],
+ ["Jeongwon Park", "Collin","Collin471"],
+ ["natanael","Nico","gleniconico"],
+ ["Espinosa","Josh","josh471"],
+ ["Selene Ortega", "Selene","SeleneOrtega"],
+ ["Yijun Chen", "June", "cyjune"],
+ ["Chiu, Zi Xin", "Simon", "simon471"],
+ ["Au Yuet Shing", "Aulu", "Aulu"],
+ ["Ohiz Ojo","Ohiz","Ohiz98"],
+ ["Saadalsaud", "Rex" , "R3xxcon"]]
+
+for i in range(18):
+    print "git clone https://github.com/"+C[i][2]+"/"+a+".git"
+
