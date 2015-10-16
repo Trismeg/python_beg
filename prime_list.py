@@ -6,7 +6,7 @@ start = time.time()
 a=[]
 num=2
 
-while len(a)<1000:
+while len(a)<100:
     prime=True
     for x in range(2,num/2+1):
         if num%x==0:
