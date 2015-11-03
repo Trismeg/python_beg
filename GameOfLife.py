@@ -23,7 +23,7 @@ def update(A,B):
     N=len(A)
     for i in range(N):
         for j in range(N):
-            neigh=A[(i-1)%N,(j-1)%N]+A[(i-1)%N,(j)]+A[(i-1)%N,(j+1)%N]+A[(i),(j-1)%N]+A[(i),(j+1)%N]+A[(i+1)%N,(j-1)%N]+A[(i+1)%N,(j)]+A[(i+1)%N,(j+1)%N]
+            neigh=A[(i-1)%N][(j-1)%N]+A[(i-1)%N][j]+A[(i-1)%N][(j+1)%N]+A[i][(j-1)%N]+A[i][(j+1)%N]+A[(i+1)%N][(j-1)%N]+A[(i+1)%N][j]+A[(i+1)%N][(j+1)%N]
             if A[i][j]==0:
                 if neigh==3:
                     B[i][j]=1
@@ -45,7 +45,12 @@ def gen2Dgraphic(N):
         a=a+[b]
     return a
 
-
+def push(B,A):
+    N=len(A)
+    for i in range(N):
+        for j in range(N):
+            A[i][j]=B[i][j]
+            
 def drawArray(A,a,window):
 #A is the array of 0,1 values representing the state of the game
 #a is an array of Circle objects
@@ -58,8 +63,21 @@ def drawArray(A,a,window):
             if A[i][j]==0:
                 a[i][j].undraw()
 
+N=10
+win = GraphWin()
+win.setCoords(-1,-1,N+1,N+1)
+grid=empty(N)
+grid2=empty(N)
+circles=gen2Dgraphic(N)
+fill(grid,0.3)
 
-    
+for i in range(10):
+    drawArray(grid,circles,win)
+    update(grid,grid2)
+    push(grid2,grid)
+
+
+
 
 
 #def 2Dgraphic(A):
