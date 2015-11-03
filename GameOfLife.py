@@ -59,6 +59,7 @@ def drawArray(A,a,window):
     for i in range(N):
         for j in range(N):
             if A[i][j]==1:
+                a[i][j].undraw()
                 a[i][j].draw(window)
             if A[i][j]==0:
                 a[i][j].undraw()
@@ -71,7 +72,7 @@ grid2=empty(N)
 circles=gen2Dgraphic(N)
 fill(grid,0.3)
 
-for i in range(10):
+for i in range(100):
     drawArray(grid,circles,win)
     update(grid,grid2)
     push(grid2,grid)
