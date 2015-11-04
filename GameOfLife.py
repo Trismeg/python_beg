@@ -64,37 +64,21 @@ def drawArray(A,a,window):
             if A[i][j]==0:
                 a[i][j].undraw()
 
-N=10
-win = GraphWin()
+N=50
+win = GraphWin("Title",600,600)
 win.setCoords(-1,-1,N+1,N+1)
 grid=empty(N)
 grid2=empty(N)
 circles=gen2Dgraphic(N)
-fill(grid,0.3)
+fill(grid,0.1)
 
-for i in range(100):
+while True:
     drawArray(grid,circles,win)
     update(grid,grid2)
     push(grid2,grid)
 
 
 
-
-
-#def 2Dgraphic(A):
-#    N=len(A)
-#    a=[]
-#    for i in range(N):
-#        b=[]
-#        for j in range(N):
-#            b=b+[Circle(Point(i,j),.49)]
-#        a=a+[b]
-    
-#def graph2Darray(A,window):
-#    N=len(A)
-#    for i in range(N):
-#        for j in range(N):
-#            A[i][j].draw(window)
 
 
     
