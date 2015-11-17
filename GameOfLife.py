@@ -64,13 +64,22 @@ def drawArray(A,a,window):
             if A[i][j]==0:
                 a[i][j].undraw()
 
+def slider(a,x,y):
+    a[0+x][0+y]=1
+    a[0+x][1+y]=1
+    a[2+x][1+y]=1
+    a[0+x][2+y]=1
+    a[1+x][2+y]=1
+
 N=50
 win = GraphWin("Title",600,600)
 win.setCoords(-1,-1,N+1,N+1)
 grid=empty(N)
 grid2=empty(N)
 circles=gen2Dgraphic(N)
-fill(grid,0.1)
+#fill(grid,0.1)
+for i in range(10):
+   slider(grid,5*i,5*i)
 
 while True:
     drawArray(grid,circles,win)
